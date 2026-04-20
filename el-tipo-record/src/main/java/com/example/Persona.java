@@ -1,55 +1,16 @@
 package com.example;
 
-    // La clase final no puede ser heredada, por lo tanto no puede ser abstract
-public final class Persona {
+/*
+//El record no es un mero atajo para crear una clase que permita crear objetos inmutables,
+//es decir, que una vez creados no se pueden modificar. Es la mejor opcion para transportar datos.
+//Genera una estructira de datos que es final y no se pueden hetredar.
+//Las propiedades o campos se convoerten en private final, por lo que no generan setter para cambiar el valor.
+//Se generan los metodos toString Equals y HasCode.
+Un record no necesita Lombok, pero utilizar @Builder, nos facilita el trabajo. Porque no estariamos 
+obligados a suministrar todos los parametros ni tendriamos que respetar el orden
+ */
 
-    private final String nombre = "Rodrigo";
-    private final double altura = 1.95;
-
-
-   public Persona(){
-
-   }
-
-       public String getNombre() {
-        return nombre;
-    }
-
-
-    public double getAltura() {
-        return altura;
-    }
-
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-        long temp;
-        temp = Double.doubleToLongBits(altura);
-        result = prime * result + (int) (temp ^ (temp >>> 32));
-        return result;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Persona other = (Persona) obj;
-        if (nombre == null) {
-            if (other.nombre != null)
-                return false;
-        } else if (!nombre.equals(other.nombre))
-            return false;
-        if (Double.doubleToLongBits(altura) != Double.doubleToLongBits(other.altura))
-            return false;
-        return true;
-    }
-
-    
+public record Persona(String nombre, double altura, 
+                      String apellido1, String correo) {
 
 }

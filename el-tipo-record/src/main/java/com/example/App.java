@@ -1,11 +1,10 @@
 package com.example;
 
-/**
- * Hello world!
- */
 public class App {
 
     public static void main(String[] args) {
+
+        Persona persona = new Persona("Alex Eduardo", 1.80, "Pilicita", "pili@gmail.com");
 
 
     }
