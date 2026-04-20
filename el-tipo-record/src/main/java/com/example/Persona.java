@@ -10,6 +10,7 @@ Un record no necesita Lombok, pero utilizar @Builder, nos facilita el trabajo. P
 obligados a suministrar todos los parametros ni tendriamos que respetar el orden
  */
 
+@Builder
 public record Persona(String nombre, double altura, 
                       String apellido1, String correo) {
 
