@@ -4,7 +4,11 @@ package com.example;
  * Hello world!
  */
 public class App {
+
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+
+        //abstract no se puede instanciar, solo sirve para que otras hereden de ella
+        Persona persona = new Persona();
+
     }
 }
